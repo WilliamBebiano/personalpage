@@ -84,7 +84,7 @@ main {
     transform: rotate3d(1, 1, 0, 10deg);
     transition: transform 1s;
     filter: drop-shadow(8px 8px 10px #222);
-    
+
 }
 
 img:hover {
@@ -100,40 +100,44 @@ img:hover {
 
 .container {
     display: grid;
-  grid-template-areas:
-    "image text"
-    "image text"
-    "image text";
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: repeat(3, auto);
-  grid-gap: 20px;
+    grid-template-areas:
+        "image text"
+        "image text"
+        "image text";
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 20px;
 }
-.experience{
+
+.experience {
     background-color: rgba(7, 7, 7, 0.5);
     padding: 20px;
     width: 100vw;
     text-align: left;
 
 }
-.astro1{
+
+.astro1 {
     grid-area: image;
     width: 250px;
-    margin-left:50px;
+    margin-left: 50px;
     height: 500px;
     transition: transform 30s;
     animation: rotate 30s infinite linear;
 }
+
 @keyframes rotate {
     0% {
         transform: rotate(-30deg);
     }
+
     100% {
         transform: rotate(30deg);
     }
 }
 
 
-.resume{
+.resume {
     margin-top: 25px;
     font-size: 25px;
     text-shadow: #020202;
@@ -142,11 +146,24 @@ img:hover {
     color: rgb(247, 245, 245);
 
 }
+
 .container1 {
     display: grid;
-    grid-template-columns: repeat(3,2, 1fr); /* 2 columns */
-    grid-template-rows: repeat(3, auto); /* 2 rows, with the height determined by the content */
-  }
+    grid-template-columns: repeat(3, 2, 1fr);
+    /* 2 columns */
+    grid-template-rows: repeat(3, auto);
+    /* 2 rows, with the height determined by the content */
+}
+
+.gallery-image {
+    display: none;
+    width: 400px;
+    height: 500px;
+}
+
+.gallery-image.active {
+    display: block;
+}
 
 section#contact {
     text-align: center;
