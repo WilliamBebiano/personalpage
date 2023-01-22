@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Williams page </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+   
+</head>
+
+<body class="background">
+    <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+    <main>
+        <section id="about">
+            <div>
+                <img class="will1" src="assets/IMG_5140.JPG" alt="personal foto">
+            </div>
+            <div class="presentation">
+                <p>
+                <h2> Hi, </h2> my name is <h1> William Bebiano </h1>
+                <p class="presentation">and I'm a Web Developer.</p>
+                </p>
+            </div>
+        </section>
+        <section >
+           <h2  class="experience">Experience</h2>
+            <div class="container">
+            <div>
+                <img class="astro1" src="assets/astronaut1-removebg-preview.png" alt="astronauta">
+            </div>
+            <script>
+                window.onload = function() {
+                  const text = document.getElementById("typing").innerText;
+                  document.getElementById("typing").innerText = "";
+                
+                  let i = 0;
+                  function type() {
+                      if (i < text.length) {
+                          document.getElementById("typing").innerHTML += text.charAt(i);
+                          i++;
+                          setTimeout(type, 50);
+                      }
+                  }
+                  setTimeout(type, 2000); 
+                }
+              </script>
+            <p class="resume" id="typing">
+                    I worked for more than eight years in Automotive and Aerospace industries in the quality area, the scope of work is
+                focused on improving production processes and products, aiming at customer satisfaction and adding value. I got a
+                lot of experience with direct contact with customers and suppliers, solving problems and finding a solution.
+                <p>
+                I developed a project to implement the MES in production with a large team, where I had a lot of contact with the IT
+                area, together with the program developers, we implemented a system that measures availability, machine performance
+                and process quality.</p>
+                I believe I can add a lot of value to the company, I am a very focused and dedicated professional.
+            
+            </p>
+        </div>
+        </section>
+        <section >
+            <h2 class="experience">Projects</h2>
+            <ul class="container1">
+                <li>
+                    <h3>Project 1: My Personal Website</h3>
+                    <p>Built my personal website using HTML, CSS, and JavaScript. The website is fully responsive and
+                        optimized for all devices.</p>
+                </li>
+                <li>
+                    <h3>Project 2: Online Store</h3>
+                    <p>Built an online store using HTML, CSS, JavaScript, and PHP. The store is fully functional and
+                        includes a shopping cart and secure checkout.</p>
+                </li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2 class="experience" >Contact Me</h2>
+            <p>Feel free to contact me for any project or job opportunities. You can reach me at <a
+                    href="mailto:johndoe@gmail.com">johndoe@gmail.com</a> or find me on <a
+                    href="https://www.linkedin.com/in/johndoe">LinkedIn</a>.</p>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2023 William Bebiano</p>
+    </footer>
+</body>
+
+</body>
+
+</html>
