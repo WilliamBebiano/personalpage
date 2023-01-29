@@ -14,39 +14,67 @@ ready.src = './assets/getready.png'
 const canvas = document.querySelector('canvas')
 const contexto = canvas.getContext('2d')
 
-//(personagem Astronauta)
-const astronaut = {
-    spriteX: 25,
-    spriteY: 28,
-    width: 282,
-    height: 701,
-    x: 10,
-    y:0,
-    newWidth: 80,
-    newHeight: 180,
-    gravidade: 0.25,
-    velocidade: 0,
+/// Funcao de colisao astronauta e o chao 
 
-    atualiza() {
-        astronaut.velocidade = astronaut.velocidade + astronaut.gravidade
-        console.log(astronaut.velocidade)
-        astronaut.y = astronaut.y +  astronaut.velocidade
-    },
-    drawAstronaut() {
-        contexto.drawImage(
-        astro1, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
-        astronaut.spriteX , astronaut.spriteY, // sprite x e y
-        astronaut.width,astronaut.height, // tamanho do recorte na sprite
-        astronaut.x,astronaut.y, // ponto de inicio do personagem no canvas
-        astronaut.newWidth, astronaut.newHeight // tamanho da imagem que ira aparecer no canvas (redimensionada)
-)
+function fazColisao(astronaut, floor) {
+    const astronautY = astronaut.y + 180
+    const floorY = floor.y
+
+    if(astronautY >= floorY){
+        return true
     }
+    return false
 }
+
+//(personagem Astronauta)
+function createNewAstronaut() {
+    const astronaut = {
+        spriteX: 25,
+        spriteY: 28,
+        width: 282,
+        height: 701,
+        x: 10,
+        y:0,
+        newWidth: 80,
+        newHeight: 180,
+        
+        pulo:4.6,
+    
+        jump(){
+            console.log("devo ter pulado")
+            astronaut.velocidade = - astronaut.pulo 
+    
+        },
+        gravidade: 0.25,
+        velocidade: 0,
+        atualiza() {
+            if(fazColisao(astronaut, floor)){
+                console.log("colide")
+                mudaParaTela(telas.INICIO)
+                return
+    
+            }
+            astronaut.velocidade = astronaut.velocidade + astronaut.gravidade
+            astronaut.y = astronaut.y +  astronaut.velocidade
+        },
+        drawAstronaut() {
+            contexto.drawImage(
+            astro1, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
+            astronaut.spriteX , astronaut.spriteY, // sprite x e y
+            astronaut.width,astronaut.height, // tamanho do recorte na sprite
+            astronaut.x,astronaut.y, // ponto de inicio do personagem no canvas
+            astronaut.newWidth, astronaut.newHeight // tamanho da imagem que ira aparecer no canvas (redimensionada)
+    )
+        }
+    }
+    return astronaut
+}
+
 
 //( definicao de background )
 const background = {
-    spriteX: 753,
-    spriteY: 8,
+    spriteX: 763,
+    spriteY: 15,
     width: 1766,
     height: 1026,
     x: 0,
@@ -55,8 +83,8 @@ const background = {
     newHeight: 602,
     drawBackground() {
         /* se fosse necessrio completar o plano de fundo com alguma cor*/
-        /*contexto.fillStyle = '#70c5ce'//cor ficticia
-        contexto.fillRect(0,0, canvas.width, canvas.height)*/
+        contexto.fillStyle = '#00000'//cor ficticia
+        contexto.fillRect(0,0, canvas.width, canvas.height)
 
         contexto.drawImage(
         sprites, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
@@ -115,7 +143,7 @@ const inicio = {
     spriteX: 0,
     spriteY: 0,
     width: 757,
-    height: 573,
+    height: 570,
     x: 300,
     y: 100,
     newWidth: 400,
@@ -133,19 +161,27 @@ const inicio = {
 //
 //(Telas)
 //
+const globais = {}
 let telaAtiva = {}
 
 function mudaParaTela(novaTela) {
     telaAtiva = novaTela
+
+    if(telaAtiva.inicializa){
+    telaAtiva.inicializa()
+} 
 }
 
 
 const telas = {
     INICIO: {
+        inicializa() {
+           globais.astronaut = createNewAstronaut() 
+        },
         draw() {
-            background.drawBackground()
-            floor.drawFloor()
-            astronaut.drawAstronaut()
+            //background.drawBackground()
+            //floor.drawFloor()
+            //astronaut.drawAstronaut()
             inicio.drawInicio()
 
         },
@@ -162,11 +198,15 @@ telas.JOGO = {
     draw() {
         background.drawBackground()
         floor.drawFloor()
-        astronaut.drawAstronaut()
+        globais.astronaut.drawAstronaut()
         cometa.drawCometa()
     },
+    click() {
+        globais.astronaut.jump()
+
+    },
     atualiza() {
-        astronaut.atualiza()
+        globais.astronaut.atualiza()
     }
 }
 
