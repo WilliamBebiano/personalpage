@@ -8,6 +8,9 @@ astro1.src = './assets/astro1.png'
 const meteoro = new Image()
 meteoro.src = './assets/meteoro1.png'
 
+const ready = new Image()
+ready.src = './assets/getready.png'
+
 const canvas = document.querySelector('canvas')
 const contexto = canvas.getContext('2d')
 
@@ -18,12 +21,16 @@ const astronaut = {
     width: 282,
     height: 701,
     x: 10,
-    y:380,
+    y:0,
     newWidth: 80,
     newHeight: 180,
+    gravidade: 0.25,
+    velocidade: 0,
 
     atualiza() {
-        astronaut.y = astronaut.y +1
+        astronaut.velocidade = astronaut.velocidade + astronaut.gravidade
+        console.log(astronaut.velocidade)
+        astronaut.y = astronaut.y +  astronaut.velocidade
     },
     drawAstronaut() {
         contexto.drawImage(
@@ -89,8 +96,8 @@ const cometa = {
     spriteY: 17,
     width: 510,
     height: 363,
-    x: 400,
-    y: 400,
+    x: 900,
+    y: 10,
     newWidth: 100,
     newHeight: 50,
     drawCometa() {
@@ -103,20 +110,81 @@ const cometa = {
 )
     }
 }
+// Tela de inicio 
+const inicio = {
+    spriteX: 0,
+    spriteY: 0,
+    width: 757,
+    height: 573,
+    x: 300,
+    y: 100,
+    newWidth: 400,
+    newHeight: 400,
+    drawInicio() {
+        contexto.drawImage(
+        ready, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
+        inicio.spriteX , inicio.spriteY, // sprite x e y
+        inicio.width,inicio.height, // tamanho do recorte na sprite
+        inicio.x,inicio.y, // ponto de inicio do personagem no canvas
+        inicio.newWidth, inicio.newHeight // tamanho da imagem que ira aparecer no canvas (redimensionada)
+)
+    }
+}
+//
+//(Telas)
+//
+let telaAtiva = {}
+
+function mudaParaTela(novaTela) {
+    telaAtiva = novaTela
+}
 
 
+const telas = {
+    INICIO: {
+        draw() {
+            background.drawBackground()
+            floor.drawFloor()
+            astronaut.drawAstronaut()
+            inicio.drawInicio()
 
+        },
+        click() {
+            mudaParaTela(telas.JOGO)
+        },
+        atualiza() {
+
+        }
+    }
+}
+
+telas.JOGO = {
+    draw() {
+        background.drawBackground()
+        floor.drawFloor()
+        astronaut.drawAstronaut()
+        cometa.drawCometa()
+    },
+    atualiza() {
+        astronaut.atualiza()
+    }
+}
 
 function loop() {
     
-    background.drawBackground()
-    floor.drawFloor()
-    astronaut.drawAstronaut() 
-    cometa.drawCometa()
+    telaAtiva.draw()
+    telaAtiva.atualiza()
+    
     requestAnimationFrame(loop)
-
-   
-
+  
 }
+window.addEventListener('click', function(){
+   if(telaAtiva.click){
+    telaAtiva.click()
+
+   }
+})
+
+mudaParaTela(telas.INICIO)
 loop()
 
