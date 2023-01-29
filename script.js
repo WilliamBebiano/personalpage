@@ -12,6 +12,26 @@ window.onload = function () {
     }
     setTimeout(type, 2000);
 
+   
+    const menuBtn = document.getElementById("menu-btn");
+    const menuTab = document.getElementById("menu-tab");
+    menuBtn.addEventListener("click", function () {
+        menuTab.classList.toggle("active");
+    });
+
+    const tabLinks = document.querySelectorAll('.tab-link');
+    tabLinks.forEach(function(link) {
+      link.addEventListener('click', function() {
+        const tabId = this.dataset.tab;
+        const tab = document.getElementById(tabId);
+        const tabs = document.querySelectorAll('.tab');
+        tabs.forEach(function(tab) {
+          tab.style.display = 'none';
+        });
+        tab.style.display = 'block';
+      });
+    });
+
     const galleryImages = document.querySelectorAll("#gallery-image");
     let currentImageIndex = 0;
 
@@ -56,3 +76,4 @@ parallaxContainer.addEventListener('scroll', e => {
   parallaxBackground.style.transform = `translateY(${-scrollPercentage * 100}%)`;
   parallaxForeground.style.transform = `translateY(${scrollPercentage * 50}%)`;
 });
+

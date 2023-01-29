@@ -8,22 +8,27 @@
     <link href="style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
         rel="stylesheet">
     <script src="script.js"></script>
-   
+    <script src="https://kit.fontawesome.com/fe7c118f95.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="background">
     <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    
+        <button id="menu-btn" class="menu-btn">
+            <i class="fas fa-bars">WB</i>
+        </button>
+        
+        <ul id="menu-tab">
+            <li><a href="#about">About</a></li>
+            <li> <a class="tab-link" data-tab="tab1" >Experience</a></li>
+            <li><a class="tab-link"  data-tab="tab2">Projects</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
     <main>
         <section id="about">
             <div>
@@ -36,64 +41,88 @@
                 </p>
             </div>
         </section>
-        <section >
-           <h2  class="experience">Experience</h2>
-            <div class="container">
-            <div>
-                <img class="astro1" src="assets/astronaut1-removebg-preview.png" alt="astronauta">
-            </div>
-            <p class="resume" id="typing">
-                I have over eight years of experience in the Automotive and Aerospace industries in the quality field, where my focus has been on improving production processes and products to increase customer satisfaction and add value. 
-                I have extensive experience working closely with customers and suppliers to solve problems and find solutions. I also led a project to implement MES in production with a large team, where I had a lot of interaction with the IT department. Together with the program developers, we successfully implemented a system that measures availability, machine performance and process quality. 
-                I am confident that my skills and dedication can add value to any company.
-            </p>
-        </div>
-        </section>
-               
-        <section>
-            <h2 class="experience">Projects</h2>
-            <div class="parallax-container">
-                <div class="parallax-background">
-                    <div class="grid-container">
-                        <div class="image-gallery">
-                            <img id="gallery-image" class="gallery-image1" src="assets/Finans.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image" src="assets/Museu Nacional.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image" src="assets/notesapp.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image1" src="assets/signup.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image1" src="assets/SPC.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image1" src="assets/Spotify.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image1" src="assets/tesla.png" alt="project image">
-                            <img id="gallery-image" class="gallery-image1" src="assets/todo.png" alt="project image">
-                            
-                                
-                        </div>
-                        <div class="text-col-1">
-                            <h1>Título do texto</h1>
-                            <p>orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                                labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                                sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                                invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                                ipsum dolor sit amet.</p>
+        <div class="tab-container">
+            <button  class="tab-link link" data-tab="tab1" >Experience</button>
+            <button class="tab-link link"  data-tab="tab2">Projects</button>
+            <button class="tab-link link"  data-tab="tab3">Contact</button>
+            <section id="tab1" class="tab">
+                <h2 class="experience">Experience</h2>
+                <div id="exp" class="container">
+                    <div>
+                        <img class="astro1" src="assets/astronaut1-removebg-preview.png" alt="astronauta">
+                    </div>
+                    <p class="resume" id="typing">
+                        I have over eight years of experience in the Automotive and Aerospace industries in the quality
+                        field, where my focus has been on improving production processes and products to increase
+                        customer satisfaction and add value.
+                        I have extensive experience working closely with customers and suppliers to solve problems and
+                        find solutions. I also led a project to implement MES in production with a large team, where I
+                        had a lot of interaction with the IT department. Together with the program developers, we
+                        successfully implemented a system that measures availability, machine performance and process
+                        quality.
+                        I am confident that my skills and dedication can add value to any company.
+                    </p>
+                </div>
+            </section>
+
+            <section id="tab2" class="tab">
+                <h2 class="experience">Projects</h2>
+                <div class="parallax-container">
+                    <div class="parallax-background">
+                        <div class="grid-container">
+                            <div class="image-gallery">
+                                <img id="gallery-image" class="gallery-image1" src="assets/Finans.png"
+                                    alt="project image">
+                                <img id="gallery-image" class="gallery-image" src="assets/Museu Nacional.png"
+                                    alt="project image">
+                                <img id="gallery-image" class="gallery-image" src="assets/notesapp.png"
+                                    alt="project image">
+                                <img id="gallery-image" class="gallery-image1" src="assets/signup.png"
+                                    alt="project image">
+                                <img id="gallery-image" class="gallery-image1" src="assets/SPC.png" alt="project image">
+                                <img id="gallery-image" class="gallery-image1" src="assets/Spotify.png"
+                                    alt="project image">
+                                <img id="gallery-image" class="gallery-image1" src="assets/tesla.png"
+                                    alt="project image">
+                                <img id="gallery-image" class="gallery-image1" src="assets/todo.png"
+                                    alt="project image">
+
+
+                            </div>
+                            <div class="text-col-1">
+                                <h1 class="titel-edit">Título do texto</h1>
+                                <p class="text-edit">orem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                                    invidunt ut
+                                    labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                    justo duo
+                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+                                    ipsum dolor
+                                    sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                                    eirmod tempor
+                                    invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                    accusam et
+                                    justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
+                                    est Lorem
+                                    ipsum dolor sit amet.</p>
+                            </div>
                         </div>
                     </div>
+
+
                 </div>
-                
-                
-            </div>
-        <div>
-            <button id="back-button">Previous</button>
-            <button id="next-button">Next</button>
+                <div class="button">
+                    <button class="newbtn" id="back-button"><i class="fa-solid fa-angles-left"></i></button>
+                    <button class="newbtn" id="next-button"><i class="fa-solid fa-angles-right"></i></button>
+                </div>
+            </section>
+
+            <section id="tab3" class="tab" id="contact">
+                <h2 class="experience">Contact Me</h2>
+                <p>Feel free to contact me for any project or job opportunities. You can reach me at <a
+                        href="mailto:william.bebiano@hotmail.com">william.bebiano@hotmail.com</a> or find me on <a
+                        href="www.linkedin.com/in/william-bebiano">LinkedIn</a>.</p>
+            </section>
         </div>
-        </section>
-        
-        <section id="contact">
-            <h2 class="experience" >Contact Me</h2>
-            <p>Feel free to contact me for any project or job opportunities. You can reach me at <a
-                    href="mailto:william.bebiano@hotmail.com">william.bebiano@hotmail.com</a> or find me on <a
-                    href="www.linkedin.com/in/william-bebiano">LinkedIn</a>.</p>
-        </section>
     </main>
     <footer>
         <p>Copyright © 2023 William Bebiano</p>
