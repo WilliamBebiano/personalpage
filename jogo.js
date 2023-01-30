@@ -9,7 +9,7 @@ const meteoro = new Image()
 meteoro.src = './assets/meteoro1.png'
 
 const ready = new Image()
-ready.src = './assets/getready.png'
+ready.src = './assets/initial2.png'
 
 const canvas = document.querySelector('canvas')
 const contexto = canvas.getContext('2d')
@@ -140,13 +140,13 @@ const cometa = {
 }
 // Tela de inicio 
 const inicio = {
-    spriteX: 0,
-    spriteY: 0,
-    width: 757,
-    height: 570,
-    x: 300,
+    spriteX: 29.1,
+    spriteY: 50.9,
+    width: 723.1,
+    height: 399.1,
+    x: 120,
     y: 100,
-    newWidth: 400,
+    newWidth: 1000,
     newHeight: 400,
     drawInicio() {
         contexto.drawImage(
