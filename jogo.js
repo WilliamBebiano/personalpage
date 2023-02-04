@@ -2,8 +2,14 @@ console.log('[WB] Game about me ')
 
 let frames = 0
 
+const somCaiu = new Audio()
+somCaiu.src = './assets/efeitos/efeitos_caiu.wav'
+
 const somHit = new Audio()
 somHit.src = './assets/efeitos/efeitos_hit.wav'
+
+const somJump = new Audio()
+somJump.src = './assets/efeitos/efeitos_pulo.wav'
 
 const sprites = new Image()
 sprites.src = './assets/sprite.png'
@@ -18,7 +24,10 @@ const foguete = new Image()
 foguete.src = './assets/foguete2.png'
 
 const ready = new Image()
-ready.src = './assets/initial2.png'
+ready.src = './assets/newgame.png'
+
+const lavaFloor = new Image()
+lavaFloor.src = './assets/bg.png'
 
 const canvas = document.querySelector('canvas')
 const contexto = canvas.getContext('2d')
@@ -26,7 +35,7 @@ const contexto = canvas.getContext('2d')
 /// Funcao de colisao astronauta e o chao 
 
 function fazColisao(astronaut, floor) {
-    const astronautY = astronaut.y + 100
+    const astronautY = astronaut.y + 80
     const floorY = floor.y
 
     if(astronautY >= floorY){
@@ -52,18 +61,18 @@ function createNewAstronaut() {
         jump(){
             console.log("devo ter pulado")
             astronaut.velocidade = - astronaut.pulo 
-    
+            somJump.play()
         },
         gravidade: 0.25,
         velocidade: 0,
         atualiza() {
             if(fazColisao(astronaut, globais.floor)){
-                console.log("colide")
-                somHit.play()
+                //console.log("colide")
+                somCaiu.play()
 
-                setTimeout(() => {
-                    mudaParaTela(telas.INICIO)
-                }, 500);
+                
+                    mudaParaTela(telas.FIMDOJOGO)
+                
                 
                 return
     
@@ -107,20 +116,20 @@ function createNewAstronaut() {
 //( definicao de background )
 function createBackground() {
 const background = {
-    spriteX: 763,
-    spriteY: 15,
-    width: 1766,
-    height: 1026,
+    spriteX: 0,
+    spriteY: 0,
+    width: 3122,
+    height: 1821,
     x: 0,
     y:0,
-    newWidth: 2800,
-    newHeight: 1200,
+    newWidth: 1000,
+    newHeight: 600,
     atualiza(){
         const backgroundMove = 2
         const repeatIn = background.width  / 1
         const movement = background.x - backgroundMove
 
-        background.x = movement % repeatIn
+       // background.x = movement % repeatIn
     },
     drawBackground() {
         /* se fosse necessrio completar o plano de fundo com alguma cor*/
@@ -128,7 +137,7 @@ const background = {
         //contexto.fillRect(0,0, canvas.width, canvas.height)
 
         contexto.drawImage(
-        sprites, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
+        lavaFloor, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
         background.spriteX , background.spriteY, // sprite x e y
         background.width,background.height, // tamanho do recorte na sprite
         background.x,background.y, // ponto de inicio do personagem no canvas
@@ -143,14 +152,14 @@ return background
 function createFloor(){
     
 const floor = {
-    spriteX: 14,
-    spriteY: 1264,
-    width: 1476,
-    height: 392,
+    spriteX: 0,
+    spriteY: 1870,
+    width: 3122,
+    height: 329,
     x: 0,
     y: canvas.height - 120,
-    newWidth: 1800,
-    newHeight: 200,
+    newWidth: 3122,
+    newHeight: 120,
     atualiza(){
         const floorMove = 1
         const repeatIn = floor.width /2 
@@ -160,7 +169,7 @@ const floor = {
     },
     drawFloor() {
         contexto.drawImage(
-        sprites, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
+        lavaFloor, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
         floor.spriteX , floor.spriteY, // sprite x e y
         floor.width,floor.height, // tamanho do recorte na sprite
         floor.x,floor.y, // ponto de inicio do personagem no canvas
@@ -315,10 +324,12 @@ function createNave() {
 
             if((globais.astronaut.x + globais.astronaut.newWidth >= par.x) ){
                 if( cabecaDoAstronaut <= par.naveCeu.y){
+                    somHit.play()
                     return true
                 }
                 
                 if(peDoAstronaut >= par.navechao.y){
+                    somHit.play()
                     return true
                 }
             }
@@ -334,7 +345,7 @@ function createNave() {
             if (passou100frames) {
                 console.log('passou 100 frames')
                 nave.pares.push({
-                    x: canvas.width - 100,
+                    x: canvas.width - 500,
                     y: -70 * (Math.random() + 1),
                 })
             }
@@ -344,7 +355,7 @@ function createNave() {
 
                 if (nave.temColisaoComOAstronauta(par)) {
                     console.log('voce perdeu')
-                    mudaParaTela(telas.INICIO)
+                    mudaParaTela(telas.FIMDOJOGO)
 
                 }
 
@@ -359,17 +370,18 @@ function createNave() {
     return nave
 }
 
-
-// Tela de inicio 
+//
+// Tela de inicio ( Orbit Run - Ready)
+//
 const inicio = {
-    spriteX: 29.1,
-    spriteY: 50.9,
-    width: 723.1,
-    height: 399.1,
-    x: 120,
-    y: 100,
-    newWidth: 1000,
-    newHeight: 400,
+    spriteX: 18,
+    spriteY: 450,
+    width: 826,
+    height: 390,
+    x: 250,
+    y: 150,
+    newWidth: 500,
+    newHeight: 250,
     drawInicio() {
         contexto.drawImage(
         ready, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
@@ -377,8 +389,64 @@ const inicio = {
         inicio.width,inicio.height, // tamanho do recorte na sprite
         inicio.x,inicio.y, // ponto de inicio do personagem no canvas
         inicio.newWidth, inicio.newHeight // tamanho da imagem que ira aparecer no canvas (redimensionada)
-)
+        
+       )
+       
+
     }
+}
+
+//
+// Tela de GameOver( Orbit Run - GameOver)
+//
+const gameOver = {
+    spriteX: 18,
+    spriteY: 27,
+    width: 826,
+    height: 390,
+    x: 250,
+    y: 150,
+    newWidth: 500,
+    newHeight: 250,
+    drawGameOver() {
+        contexto.drawImage(
+        ready, // image é a imagem base do arquivo que trara a imagem a tela , no caso sprite
+        gameOver.spriteX , gameOver.spriteY, // sprite x e y
+        gameOver.width,gameOver.height, // tamanho do recorte na sprite
+        gameOver.x,gameOver.y, // ponto de inicio do personagem no canvas
+        gameOver.newWidth, gameOver.newHeight // tamanho da imagem que ira aparecer no canvas (redimensionada)
+        
+       )
+       
+
+    }
+}
+
+
+
+//
+// Criando Placar ou Score
+//
+function createPlacar() {
+    const placar = {
+        pontuacao: 0,
+        drawPlacar() {
+            contexto.font = '35px vt323'
+            contexto.fillStyle = 'white'
+            contexto.fillText(`SCORE ${placar.pontuacao}`,canvas.width -200, 35)
+            placar.pontuacao
+
+        },
+        atualiza() {
+            const intervaloDeFrames = 20
+            const passouOIntervalo = frames % intervaloDeFrames ===0
+
+            if(passouOIntervalo) {
+            placar.pontuacao = placar.pontuacao + 1
+        }
+        }
+    }
+    return placar
 }
 //
 //(Telas)
@@ -401,14 +469,12 @@ const telas = {
            globais.background = createBackground()
            globais.astronaut = createNewAstronaut() 
            globais.floor = createFloor()
-           //globais.cometa = createCometa()
            globais.nave = createNave()
 
         },
-        draw() {
+        desenha() {
             globais.background.drawBackground()
             globais.floor.drawFloor()
-            //globais.nave.drawNave()
             globais.astronaut.drawAstronaut()
             
             inicio.drawInicio()
@@ -420,7 +486,7 @@ const telas = {
         },
         atualiza() {
             globais.floor.atualiza()
-            //globais.nave.atualiza()
+            
             
             
             
@@ -429,31 +495,52 @@ const telas = {
     }
 }
 
+
+
 telas.JOGO = {
-    draw() {
+    inicializa(){
+        globais.placar = createPlacar()
+
+    },
+    
+    desenha() {
         globais.background.drawBackground()
         globais.floor.drawFloor()
         globais.astronaut.drawAstronaut()
-        //globais.cometa.drawCometa()
         globais.nave.drawNave()
+        globais.placar.drawPlacar()
     },
     click() {
         globais.astronaut.jump()
 
     },
     atualiza() {
-        //globais.cometa.atualiza()
         globais.astronaut.atualiza()
         globais.floor.atualiza()
-        globais.background.atualiza()
         globais.nave.atualiza()
+        globais.placar.atualiza()
         
     }
 }
 
+telas.FIMDOJOGO = {
+    desenha() {
+       gameOver.drawGameOver()
+
+    },
+    atualiza() {
+
+    },
+    click(){
+        mudaParaTela(telas.INICIO)
+
+    }
+
+}
+
 function loop() {
     
-    telaAtiva.draw()
+    telaAtiva.desenha()
     telaAtiva.atualiza()
     
     frames = frames + 1
