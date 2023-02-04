@@ -9,23 +9,42 @@
         <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
+    <nav>
+        <button>Home</button>
+    </nav>
     <body class="background">
-        <canvas id="game-canvas" width="1000" height="600"></canvas>
-        <style>
-            body{
-                min-height: 600px;
-                width: 100vw;                
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            canvas {
-                border: none;
-                border-radius: 5px;
-                display: block;
-                margin: 0 auto;
-            }
-        </style>
-        <script src="./jogo.js"></script>
+        <div >
+            <h1> ORBIT RUN</h1>
+            <div>
+                <canvas id="game-canvas" width="1000" height="600"></canvas>
+                <style>
+                    body {
+                        min-height: 600px;
+                        width: 100vw;
+                        display: block;
+                       
+                    }
+        
+                    canvas {
+                        border: none;
+                        border-radius: 5px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 0 auto;
+                    }
+
+                    footer {
+                        margin-top: 50px;
+                        justify-content: center;
+                    }
+                </style>
+                <script src="./jogo.js"></script>
+            </div>
+        </div>
+        <footer>
+            <p>Copyright © 2023 William Bebiano</p>
+        </footer>
     </body>
 </html>

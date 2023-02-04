@@ -2,6 +2,12 @@ console.log('[WB] Game about me ')
 
 let frames = 0
 
+const introGame = new Audio()
+introGame.src = './assets/efeitos/intro.mp3'
+
+const gameSound = new Audio()
+gameSound.src = './assets/efeitos/space.wav'
+
 const somCaiu = new Audio()
 somCaiu.src = './assets/efeitos/efeitos_caiu.wav'
 
@@ -264,11 +270,11 @@ function createNave() {
         width: 68.5,
         height: 281,
         chao: {
-            spriteX: 3,
-            spriteY: 1,
+            spriteX: 69, 
+            spriteY: 1, 
         },
         ceu: {
-            spriteX: 69,
+            spriteX: 3,
             spriteY: 1,
         },
         espaco: 80,
@@ -345,7 +351,7 @@ function createNave() {
             if (passou100frames) {
                 console.log('passou 100 frames')
                 nave.pares.push({
-                    x: canvas.width - 500,
+                    x: canvas.width - 200,
                     y: -70 * (Math.random() + 1),
                 })
             }
@@ -442,7 +448,7 @@ function createPlacar() {
             const passouOIntervalo = frames % intervaloDeFrames ===0
 
             if(passouOIntervalo) {
-            placar.pontuacao = placar.pontuacao + 1
+            placar.pontuacao = placar.pontuacao + 20
         }
         }
     }
@@ -470,6 +476,7 @@ const telas = {
            globais.astronaut = createNewAstronaut() 
            globais.floor = createFloor()
            globais.nave = createNave()
+           
 
         },
         desenha() {
@@ -486,8 +493,8 @@ const telas = {
         },
         atualiza() {
             globais.floor.atualiza()
-            
-            
+            //gameSound.play()
+            introGame.play()
             
             
 
