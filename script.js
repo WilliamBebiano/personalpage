@@ -1,4 +1,5 @@
 window.onload = function () {
+  // Digitando o Texto de apresentacao 
     const text = document.getElementById("typing").innerText;
     document.getElementById("typing").innerText = "";
 
@@ -13,6 +14,7 @@ window.onload = function () {
     setTimeout(type, 2000);
 
    
+    // Adicionando funcionabilidades ao NavBar
     const menuBtn = document.getElementById("menu-btn");
     const menuTab = document.getElementById("menu-tab");
     menuBtn.addEventListener("click", function () {
@@ -31,7 +33,8 @@ window.onload = function () {
         tab.style.display = 'block';
       });
     });
-
+       // Adicionando movimento a galeria de imagens 
+    // BTn Next 
     const galleryImages = document.querySelectorAll("#gallery-image");
     let currentImageIndex = 0;
 
@@ -46,7 +49,8 @@ window.onload = function () {
     nextButton.addEventListener("click", nextImage);
 
     setInterval(nextImage, 3000);
-// back
+
+  	// BTn back
 
     function backImage() {
         galleryImages[currentImageIndex].classList.remove("active");
@@ -59,9 +63,23 @@ window.onload = function () {
     backButton.addEventListener("click", backImage);
 
     //setInterval(nextImage, 3000);
+
+    // Scroll Interativo 
+
+    const rolar = document.querySelector("#rolar-pag")
+    rolar.addEventListener("click", function() {
+     window.scrollTo(0,600)
+})
+    
+    const rolar1 = document.querySelector("#rolar-pag1")
+    rolar1.addEventListener("click", function() {
+     window.scrollTo(0,600)
+})
+
     
 }
 
+// Efeito Parallax no BG dos Projetos 
 const parallaxContainer = document.querySelector('.parallax-container');
 const parallaxBackground = document.querySelector('.parallax-background');
 const parallaxForeground = document.querySelector('.parallax-foreground');

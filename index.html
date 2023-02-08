@@ -11,7 +11,14 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
         rel="stylesheet">
-    <script src="script.js"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=My+Soul&display=swap" rel="stylesheet">
+
+        <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/fe7c118f95.js" crossorigin="anonymous"></script>
 </head>
 
@@ -23,31 +30,32 @@
         
         <ul id="menu-tab">
             
-            <li> <a class="tab-link" data-tab="tab1" >Experience</a></li>
-            <li><a class="tab-link"  data-tab="tab2">Projects</a></li>
+            <li> <a id="rolar-pag" class="tab-link" data-tab="tab1" >Experience</a></li>
+            <li><a id="rolar-pag1" class="tab-link"  data-tab="tab2">Projects</a></li>
             <li><a href="./contact.html">Contact</a></li>
             <li><a href="astrogame.html">Game</a></li>
         </ul>
     </nav>
 
-    <main>
+    <main class="foreground">
         <section id="about">
             <div>
                 <img class="will1" src="assets/IMG_5140.JPG" alt="personal foto">
             </div>
             <div class="presentation">
                 <p>
-                <h2> Hi, </h2> my name is <h1> William Bebiano </h1>
-                <p class="presentation">and I'm a <span class="yellw">Web Developer.</span></p>
+                <h2><span class="textchange">&lt;p&gt;</span>  Hi, </h2> my name is <h1> <span class="textchange">&lt;h1&gt;</span>   William Bebiano    <span class="textchange">&lt;/h1&gt;</span> </h1>
+                <p class="presentation">and I'm a <span class="yellw">Web Developer.    </span><span class="textchange">&lt;/p&gt;</span></p>
                 </p>
             </div>
         </section>
-        <div class="tab-container">
+        <div class="tab-container"> 
             <button  class="tab-link link" data-tab="tab1" >Experience</button>
             <button class="tab-link link"  data-tab="tab2">Projects</button>
+            <button class="tab-link link"  data-tab="tab4">About me</button>
             <button class="tab-link link"  data-tab="tab3">Contact</button>
-            <section id="tab1" class="tab">
-                <h2 class="experience">Experience</h2>
+            <section id="tab1" class="tab"><!-- Descrever as experiencias -->
+                <h2 class="experience"></h2>
                 <div id="exp" class="container">
                     <div>
                         <img class="astro1" src="assets/astro1.png" alt="astronauta">
@@ -67,7 +75,7 @@
             </section>
 
             <section id="tab2" class="tab">
-                <h2 class="experience">Projects</h2>
+                <h2 class="experience"></h2>
                 <div class="parallax-container">
                     <div class="parallax-background">
                         <div class="grid-container">
@@ -96,9 +104,7 @@
                                     invidunt utlabore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
                                     justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
                                     ipsum dolorit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-                                    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                    accusam etusto duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                    est Lorem ipsum dolor sit amet.</p>
+                                    </p>
                             </div>
                         </div>
                     </div>
@@ -111,10 +117,15 @@
                 </div>
             </section>
             <section id="tab3" class="tab" id="contact">
-                <h2 class="experience">Contact Me</h2>
-                <p>Feel free to contact me for any project or job opportunities. You can reach me at <a
+                <h2 class="experience"></h2>
+                <p> send me a mesage</p>
+                          <p>Feel free to contact me for any project or job opportunities. You can reach me at <a
                         href="mailto:william.bebiano@hotmail.com">william.bebiano@hotmail.com</a> or find me on <a
                         href="www.linkedin.com/in/william-bebiano">LinkedIn</a>.</p>
+            </div>
+            <section id="tab4" class="tab" id="aboutme">
+                <h2 class="experience"></h2>
+                <p>desenvolver aqui gestao de fotos de viagens e hobbys</p>
             </section>
             </div>
     </main>

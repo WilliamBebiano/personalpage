@@ -64,16 +64,13 @@
    </head>
     <body class="background">
       <nav>
-        <button id="menu-btn" class="menu-btn">
-            <i class="fas fa-bars">WB</i>
-        </button>
-        
-        <ul id="menu-tab">
-            <li><a href="#about">About</a></li>
-            <li> <a class="tab-link" data-tab="tab1" >Experience</a></li>
-            <li><a class="tab-link"  data-tab="tab2">Projects</a></li>
-            <li><a href="./contact.html">Contact</a></li>
-        </ul>
+          <button id="home">Home</button>
+          <script>
+              document.getElementById("home").addEventListener("click", function() {
+              window.location.href = "index.html";
+  });
+          </script>
+      
     </nav>
         <form id="contact-form">
             <div class="form-group">

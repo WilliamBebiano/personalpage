@@ -267,7 +267,7 @@ function createCometa() {
 // Nave espacial 
 function createNave() {
     const nave = {
-        width: 68.5,
+        width: 68,
         height: 281,
         chao: {
             spriteX: 69, 
@@ -352,7 +352,7 @@ function createNave() {
                 console.log('passou 100 frames')
                 nave.pares.push({
                     x: canvas.width - 200,
-                    y: -70 * (Math.random() + 1),
+                    y: -60 * (Math.random() +1.5),
                 })
             }
 
