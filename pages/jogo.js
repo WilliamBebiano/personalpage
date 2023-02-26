@@ -3,37 +3,37 @@ console.log('[WB] Game about me ')
 let frames = 0
 
 const introGame = new Audio()
-introGame.src = './assets/efeitos/intro.mp3'
+introGame.src = '../assets/efeitos/intro.mp3'
 
 const gameSound = new Audio()
-gameSound.src = './assets/efeitos/space.wav'
+gameSound.src = '../assets/efeitos/space.wav'
 
 const somCaiu = new Audio()
-somCaiu.src = './assets/efeitos/efeitos_caiu.wav'
+somCaiu.src = '../assets/efeitos/efeitos_caiu.wav'
 
 const somHit = new Audio()
-somHit.src = './assets/efeitos/efeitos_hit.wav'
+somHit.src = '../assets/efeitos/efeitos_hit.wav'
 
 const somJump = new Audio()
-somJump.src = './assets/efeitos/efeitos_pulo.wav'
+somJump.src = '../assets/efeitos/efeitos_pulo.wav'
 
 const sprites = new Image()
-sprites.src = './assets/sprite.png'
+sprites.src = '../assets/sprite.png'
 
 const astro1 = new Image()
-astro1.src = './assets/atrotres-removebg.png'
+astro1.src = '../assets/atrotres-removebg.png'
 
 const meteoro = new Image()
-meteoro.src = './assets/meteoro1.png'
+meteoro.src = '../assets/meteoro1.png'
 
 const foguete = new Image()
-foguete.src = './assets/foguete2.png'
+foguete.src = '../assets/foguete2.png'
 
 const ready = new Image()
-ready.src = './assets/newgame.png'
+ready.src = '../assets/newgame.png'
 
 const lavaFloor = new Image()
-lavaFloor.src = './assets/bg.png'
+lavaFloor.src = '../assets/bg.png'
 
 const canvas = document.querySelector('canvas')
 const contexto = canvas.getContext('2d')
