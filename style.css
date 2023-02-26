@@ -206,6 +206,166 @@ nav a:hover {
 }
 .link:active{
     background-color:rgba(71, 70, 44, 0.5)
+    
+}
+
+@media only screen and (max-width: 600px) {
+    body{
+    display: block;    
+
+    }
+
+    main{
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    /* Style for NavBar*/
+    #menu-tab {
+        display:none;
+    }
+    
+    .menu-btn {
+        background-color: rgba(7, 7, 7, 0.1) ;
+        color: #fff; /* Cor do texto */
+        padding: 10px 15px; /* Espaçamento interno */
+        border: none; /* Sem borda */
+        cursor: pointer; /* Mudança de cursor ao passar o mouse */
+     }
+    .menu-btn i {
+        font-size: 30px; /* Tamanho do ícone */
+        color: #fff; /* Cor do ícone */
+        
+     }
+    /* mudar a posicao do navbar*/
+    #menu-tab.active {
+        display: grid;
+        position:static;
+        z-index: 0;
+        top: 60px;
+        left: 0px;
+        background:rgba(7, 7, 7, 0.9);
+        width: 100%;
+        height: calc(40% - 10px);
+    }
+    nav { 
+        background-color: rgba(7, 7, 7, 0.5);
+        padding: 5px;
+        text-align: right;
+    }
+    
+    nav ul li {
+        display: inline-block;
+        margin: 15px;
+        padding: 0;
+        
+    }
+    
+    nav li {
+        
+    }
+    
+    nav a {
+        color: #5a5c5a;
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    nav a:hover {
+        cursor: pointer;
+        color:#45a049;
+    }
+    
+    /* Information about me */
+    #about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        
+    }
+    
+    .will1 {
+        width: 200px;
+        height: 200px;
+           
+    }
+    .textchange{
+        font-family: 'My Soul', cursive;
+        font-size: 15px;
+    } 
+    .presentation {
+        font-weight: bold;
+        font-size: 20px;
+        margin-left: 5px;
+    }   
+    
+    .brand-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    width: 200px;
+    margin-top: -50px;
+
+          
+    }
+    .mylist{
+        list-style: none;
+        display: inline;
+    }
+    .brand-list{
+        display: inline;
+        font-size: 30px;
+        
+    }
+    .brand-link{
+        display: inline;
+        text-decoration: none;
+        color: white;
+        
+    }
+    /* Style For tab information*/
+    
+    .tab-container .tab {
+        display: none;
+    }
+    
+    .tab-container .tab:first-child {
+        display: block;
+    }
+    
+    .link {
+        font-family: 'Kodchasan', sans-serif;
+        background-color:rgba(7, 7, 7, 0.9);
+        cursor: pointer;
+        padding:  5px 20px 30px 20px;
+        margin: 2px 0px 0px 0px;
+        height: 10px;
+        border-radius: 15px 15px 2px 2px;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ccc;
+    }
+    
+    .link:hover{
+        background-color:rgba(219, 207, 32, 0.5)
+    }
+    .link:active{
+        background-color:rgba(71, 70, 44, 0.5)
+        
+    }
+    
+
 }
 
 /* Section Experience */
