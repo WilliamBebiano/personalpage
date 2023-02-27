@@ -60,33 +60,6 @@ main{
     
 }
 /* Style for NavBar*/
-#menu-tab {
-    display:none;
-}
-
-.menu-btn {
-    background-color: rgba(7, 7, 7, 0.1) ;
-    color: #fff; /* Cor do texto */
-    padding: 10px 15px; /* Espaçamento interno */
-    border: none; /* Sem borda */
-    cursor: pointer; /* Mudança de cursor ao passar o mouse */
- }
-.menu-btn i {
-    font-size: 30px; /* Tamanho do ícone */
-    color: #fff; /* Cor do ícone */
-    
- }
-/* mudar a posicao do navbar*/
-#menu-tab.active {
-    display: grid;
-    position:static;
-    z-index: 0;
-    top: 60px;
-    left: 0px;
-    background:rgba(7, 7, 7, 0.9);
-    width: 100%;
-    height: calc(40% - 10px);
-}
 nav { 
     background-color: rgba(7, 7, 7, 0.5);
     padding: 5px;
@@ -97,10 +70,6 @@ nav ul li {
     display: inline-block;
     margin: 15px;
     padding: 0;
-    
-}
-
-nav li {
     
 }
 
@@ -165,49 +134,30 @@ nav a:hover {
     height: 30vh;
    
 }
-.mylist{
-    list-style: none;
-}
 .brand-list{
     font-size: 60px;
-    margin: 10px;
+   
 }
 .brand-link{
     text-decoration: none;
     color: white;
     
 }
-/* Style For tab information*/
-
-.tab-container .tab {
-    display: none;
-}
-
-.tab-container .tab:first-child {
+/* footer */
+footer {
     display: block;
+    border-collapse: collapse;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #020202;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
 
-.link {
-    font-family: 'Kodchasan', sans-serif;
-    background-color:rgba(7, 7, 7, 0.9);
-    cursor: pointer;
-    padding:  5px 20px 30px 20px;
-    margin: 2px 0px 0px 0px;
-    height: 10px;
-    border-radius: 15px 15px 2px 2px;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    color: #ccc;
-}
 
-.link:hover{
-    background-color:rgba(219, 207, 32, 0.5)
-}
-.link:active{
-    background-color:rgba(71, 70, 44, 0.5)
-    
-}
 
 @media only screen and (max-width: 600px) {
     body{
@@ -217,11 +167,13 @@ nav a:hover {
 
     main{
         width: 100vw;
-        height: 90vh;
+        height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-       
+        align-items: center;
+        margin-top: 35px;
+              
     }
     
    
@@ -233,7 +185,10 @@ nav a:hover {
         padding: 5px;
         text-align: right;
         margin: 0 auto;
-    }
+        position: fixed;
+        width: 100vw;
+        z-index: 1;
+        }
     
     nav ul li {
         display: inline-block;
@@ -254,7 +209,9 @@ nav a:hover {
         font-weight: bold;
         cursor: pointer;
         margin: 0 auto;
+        z-index: 1;
     }
+    
     
     nav a:hover {
         cursor: pointer;
@@ -267,13 +224,15 @@ nav a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 120px;
+        height: 400px;
+        
         
     }
     
     .will1 {
         width: 16rem;
         height: 16rem;
+        z-index: 2;
            
     }
     .textchange{
@@ -291,66 +250,30 @@ nav a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 400px;
-    margin-bottom: 100px;
-   
-
-          
+    width: 100px;
+    height: 100px;
+    margin: 0px;
+            
     }
-    .mylist{
-        list-style: none;
-        display: inline;
-        margin: 0px;
-        
-    }
-    .brand-list{
-        display: inline;
+    
+  .brand-list{
         font-size: 30px;
-        
-        
+  
+      
     }
-    .brand-link{
-        display: inline;
-        text-decoration: none;
-        color: white;
-        
-        
-        
-    }
-    /* Style For tab information*/
-    
-    .tab-container .tab {
-        display: none;
-    }
-    
-    .tab-container .tab:first-child {
+    footer {
         display: block;
+        border-collapse: collapse;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #020202;
+        font-size: 10px;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
     }
-    
-    .link {
-        font-family: 'Kodchasan', sans-serif;
-        background-color:rgba(7, 7, 7, 0.9);
-        cursor: pointer;
-        padding:  5px 20px 30px 20px;
-        margin: 2px 0px 0px 0px;
-        height: 10px;
-        border-radius: 15px 15px 2px 2px;
-        border: none;
-        font-size: 20px;
-        font-weight: bold;
-        color: #ccc;
-    }
-    
-    .link:hover{
-        background-color:rgba(219, 207, 32, 0.5)
-    }
-    .link:active{
-        background-color:rgba(71, 70, 44, 0.5)
-        
-    }
-    
-
 }
 
 /* Section Experience */
@@ -541,19 +464,6 @@ section h2 {
     margin-top: 0;
 }*/
 
-/* footer */
-footer {
-    display: block;
-    border-collapse: collapse;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #020202;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-}
 
 /* contact froms*/
 #contact-form {
