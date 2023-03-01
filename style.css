@@ -3,6 +3,7 @@
     padding: 0;
     font-family: 'Roboto', sans-serif;
 }
+
 /* Body edit */
 body {
     color: #ffffff;
@@ -13,7 +14,7 @@ body {
     max-height: 100vh;
 }
 
-main{
+main {
     width: 100vw;
     height: 90vh;
     display: flex;
@@ -49,18 +50,20 @@ main{
 }
 
 
-.foreground{
+.foreground {
     background-color: rgba(243, 243, 243, 0.158);
-    background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-    
+   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+
 }
-.textchange{
+
+.textchange {
     font-family: 'My Soul', cursive;
     font-size: 18px;
-    
+
 }
+
 /* Style for NavBar*/
-nav { 
+nav {
     background-color: rgba(7, 7, 7, 0.5);
     padding: 5px;
     text-align: right;
@@ -70,7 +73,7 @@ nav ul li {
     display: inline-block;
     margin: 15px;
     padding: 0;
-    
+
 }
 
 nav a {
@@ -83,7 +86,7 @@ nav a {
 
 nav a:hover {
     cursor: pointer;
-    color:#45a049;
+    color: #45a049;
 }
 
 /* Information about me */
@@ -92,7 +95,7 @@ nav a:hover {
     justify-content: center;
     align-items: center;
     height: 80vh;
-    
+
 }
 
 .will1 {
@@ -122,27 +125,35 @@ nav a:hover {
     color: yellow;
 }
 
-.brand-info{
+.brand-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items:flex-start;
-   /* background-color: rgba(7, 7, 7, 0.5);*/
+    align-items: flex-start;
+    /* background-color: rgba(7, 7, 7, 0.5);*/
     margin: 100px;
     padding: 15px;
     width: 65px;
     height: 30vh;
-   
+
 }
-.brand-list{
+
+.brand-list {
     font-size: 60px;
-   
+
 }
-.brand-link{
+
+.brand-link {
     text-decoration: none;
     color: white;
-    
+
 }
+
+.brand-link:hover {
+    cursor: pointer;
+    color: #45a049;
+}
+
 /* footer */
 footer {
     display: block;
@@ -160,12 +171,12 @@ footer {
 
 
 @media only screen and (max-width: 600px) {
-    body{
-    display: block;    
+    body {
+        display: block;
 
     }
 
-    main{
+    main {
         width: 100vw;
         height: 100vh;
         display: flex;
@@ -173,14 +184,14 @@ footer {
         justify-content: center;
         align-items: center;
         margin-top: 35px;
-              
+
     }
-    
-   
-    
+
+
+
     /* mudar a posicao do navbar*/
-    
-    nav { 
+
+    nav {
         background-color: rgba(7, 7, 7, 0.5);
         padding: 5px;
         text-align: right;
@@ -188,36 +199,37 @@ footer {
         position: fixed;
         width: 100vw;
         z-index: 1;
-        }
-    
+    }
+
     nav ul li {
         display: inline-block;
         margin: 10px;
         padding: 0;
-        
+
     }
-    
+
     nav li {
         margin: 0 auto;
-        
+
     }
-    
+
     nav a {
         color: #5a5c5a;
         text-decoration: none;
-        font-size: 10px;
+        font-size: 12px;
+        margin-right: 5px;
         font-weight: bold;
         cursor: pointer;
         margin: 0 auto;
         z-index: 1;
     }
-    
-    
+
+
     nav a:hover {
         cursor: pointer;
-        color:#45a049;
+        color: #45a049;
     }
-    
+
     /* Information about me */
     #about {
         display: flex;
@@ -225,57 +237,61 @@ footer {
         justify-content: center;
         align-items: center;
         height: 400px;
-        
-        
+
+
     }
-    
+
     .will1 {
         width: 16rem;
         height: 16rem;
         z-index: 2;
-           
+
     }
-    .textchange{
+
+    .textchange {
         font-family: 'My Soul', cursive;
         font-size: 15px;
-    } 
+    }
+
     .presentation {
         font-weight: bold;
         font-size: 20px;
         margin-left: 5px;
-    }   
-    
-    .brand-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-    height: 100px;
-    margin: 0px;
-            
     }
-    
-  .brand-list{
+.brand-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 120px;
+        height: 100px;
+        padding: 15px;
+
+    }
+
+    .brand-list {
         font-size: 30px;
-  
       
     }
-    footer {
-        display: block;
-        border-collapse: collapse;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: #020202;
-        font-size: 10px;
-        color: #fff;
-        padding: 10px;
-        text-align: center;
-    }
+
+   
+
+
+footer {
+    display: block;
+    border-collapse: collapse;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #020202;
+    font-size: 10px;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
 
+}
 /* Section Experience */
 .container {
     display: grid;
@@ -337,8 +353,8 @@ footer {
     height: 700px;
     width: 100vw;
     overflow-x: hidden;
-    overflow-y: hidden; 
-    
+    overflow-y: hidden;
+
 }
 
 .parallax-background {
@@ -355,6 +371,7 @@ footer {
     background-size: 150%;
 
 }
+
 @keyframes move-left-to-right {
     from {
         background-position: left;
@@ -385,7 +402,7 @@ footer {
     align-items: center;
     max-width: 100%;
     max-height: 100vh;
-    
+
 
 }
 
@@ -393,11 +410,12 @@ footer {
     grid-column: 2;
     max-width: 80%;
     max-height: 100vh;
-    background-color:  rgba(253, 249, 249, 0.3);
+    background-color: rgba(253, 249, 249, 0.3);
     border-radius: 10px;
 
 }
-.titel-edit{
+
+.titel-edit {
     margin: 15px 0px 15px 0px;
     padding: 10px;
     color: #020202;
@@ -405,7 +423,7 @@ footer {
     font-weight: bold;
 }
 
-.text-edit{
+.text-edit {
     margin: 15px 0px 15px 0px;
     padding: 10px;
     color: #020202;
@@ -430,23 +448,26 @@ footer {
 .gallery-image1.active {
     display: block;
 }
-.button{
+
+.button {
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
 
 
 }
-.newbtn{
-    margin-top: -130px ;
+
+.newbtn {
+    margin-top: -130px;
     position: relative;
     padding: 5px;
     font-size: 100px;
-    background-color:  rgba(7, 7, 7, 0.7);
+    background-color: rgba(7, 7, 7, 0.7);
     border: none;
     border-radius: 15px;
     color: #45a049;
 }
+
 /* contact*/
 section#contact {
     text-align: center;
@@ -481,7 +502,7 @@ section h2 {
     color: #020202;
     margin-bottom: 10px;
     display: block;
-    
+
 }
 
 #contact-form input,
@@ -505,4 +526,3 @@ section h2 {
 #contact-form button[type="submit"]:hover {
     background-color: #45a049;
 }
-
