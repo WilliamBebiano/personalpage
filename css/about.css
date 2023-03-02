@@ -1,9 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
     background: rgba(255, 255, 255, 0.281);
     
 }
 nav {
-    background-color: rgba(7, 7, 7, 0.5);
+    background-color: rgba(7, 7, 7, 0.9);
     display: block;
     position: fixed;
     top: 0;
@@ -11,7 +17,7 @@ nav {
     z-index: 100;
     width: 100vw;
     padding: 5px;
-    text-align: left;
+    text-align: right;
 }
 
 nav ul li {
@@ -23,6 +29,7 @@ nav ul li {
 
 nav a {
     color: #5a5c5a;
+    margin-right: 5rem;
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -35,13 +42,23 @@ nav a:hover {
 }
 
 .aboutContainer {
-    display: block;
+    max-width: 1080px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+
+
+   /* display: block;
     margin: 0 auto;
     position: static;
     background-color: #ffff;
     max-width: 900px;
     margin-top: 60px;
-    color: black;
+    color: black;*/
    
 
 }
@@ -157,6 +174,18 @@ nav a:hover {
     margin: 10px;
 }
 
+footer {
+    display: block;
+    border-collapse: collapse;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(2, 2, 2, 0.911);
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
 /* Mobile */
 @media only screen and (max-width: 600px) {
     .containerDeDescricao {

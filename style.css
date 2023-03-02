@@ -7,11 +7,8 @@
 /* Body edit */
 body {
     color: #ffffff;
-    background-color: rgba(253, 253, 253, 0.5);
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    max-height: 100vh;
+    background: rgb(204, 201, 220)
+    /*background:linear-gradient(45deg, #cdced4, #797794, #695f74, #4a7565, #0e0d0f);*/
 }
 
 main{
@@ -19,55 +16,13 @@ main{
     height: 90vh;
 }
 
-section {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-}
-
-.background {
-    background-image: url("assets/script.js.png");
-    background-color: rgba(0, 0, 0, 0.1);
-    background-size: 250%;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-
-@keyframes moveBackground {
-    from {
-        background-position: 0 0;
-    }
-
-    to {
-        background-position: -1500px 0;
-    }
-}
-
-.background {
-    animation: moveBackground 120s linear infinite;
-}
-
-
-.foreground {
-    background-color: rgba(243, 243, 243, 0.158);
-   background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
-
-}
-
-.textchange {
-    font-family: 'My Soul', cursive;
-    font-size: 18px;
-
-}
-
 /* Style for NavBar*/
 nav {
-    background-color: rgba(7, 7, 7, 0.5);
+    background: rgba(0, 0, 0, 0.863);
+    box-shadow: 0 8px 32px 0 rgba(29, 30, 41, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     padding: 5px;
     text-align: right;
 }
@@ -80,9 +35,9 @@ nav ul li {
 }
 
 nav a {
-    color: #5a5c5a;
+    color: #f8f8f8;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
     cursor: pointer;
 }
@@ -93,23 +48,38 @@ nav a:hover {
 }
 
 /* Information about me */
-#about {
-    max-width: 1080px;
+section{
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    justify-content: center;
     align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    height: 80vh;
+    width: 100vw;
+    height: 90vh;
+    
+}
+.about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+    
+}
+.wrapper-about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28vw;
+    height: 50vh;
+    
 
 }
-
 .will1 {
-    width: 400px;
-    height: 400px;
+    width: 30rem;
+    height: 30rem;
     border-radius: 420px;
     transform: rotate3d(1, 1, 0, 10deg);
-    transition: transform 1s;
+    transition: transform 2s;
     filter: drop-shadow(8px 8px 10px #222);
 
 }
@@ -120,31 +90,54 @@ nav a:hover {
 }
 
 .presentation {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
-    font-size: 30px;
-    margin-left: 5px;
+    font-size: 2rem;
+}
+
+.wrapper-presentation{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items:start;
+    color: rgb(0, 4, 7);
+    padding: 5px;
+    z-index: 3;
+    border-bottom: 1px solid rgb(182, 52, 30);
+    border-right: 1px solid rgb(182, 52, 30);
+    -moz-box-shadow: 0px 10px 0px 0px rgba(242, 226, 226, 0.75);
+    box-shadow: 0px 10px 0px 0px rgba(182, 52, 30, 0.75);
+    border-bottom-right-radius: 15px;
+    height: 20vh;
+    width: 28vw;
+    
+
 }
 
 .yellw {
-    color: yellow;
+    color: rgb(182, 52, 30);
 }
 
 .brand-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
      /*background-color: rgba(7, 7, 7, 0.5);*/
-    margin: 100px;
-    padding: 15px;
-    width: 65px;
-    height: 30vh;
-
+    
 }
 
 .brand-list {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+    align-items: start;
     font-size: 60px;
+    height: 50vh;
+    width: 20vw;
 }
 
 
@@ -152,7 +145,8 @@ nav a:hover {
 
 .brand-link {
     text-decoration: none;
-   color: white;
+    color: #0C1821;
+   
 
 }
 
@@ -169,9 +163,14 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #020202;
+    background: rgba(0, 0, 0, 0.863);
+    box-shadow: 0 8px 32px 0 rgba(29, 30, 41, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: #fff;
     padding: 15px;
+    font-size: 1.1rem;
     text-align: center;
 }
 
@@ -192,19 +191,24 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 35px;
+        gap: 50px;
+        width: 100vw;
+        height: 90vh;
     }
-
-
+  
 
     /* mudar a posicao do navbar*/
 
     nav {
-        background-color: rgba(7, 7, 7, 0.5);
+        background: rgba(0, 0, 0, 0.863);
+        box-shadow: 0 8px 32px 0 rgba(29, 30, 41, 0.37);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.18);
         padding: 5px;
         text-align: right;
         margin: 0 auto;
-        position: fixed;
+        position: static;
         width: 100vw;
         z-index: 1;
     }
@@ -218,18 +222,22 @@ footer {
 
     nav li {
         margin: 0 auto;
+        align-items: center;
 
     }
 
     nav a {
-        color: #5a5c5a;
-        text-decoration: none;
-        font-size: 12px;
-        margin-right: 5px;
-        font-weight: bold;
-        cursor: pointer;
-        margin: 0 auto;
-        z-index: 1;
+        
+            color: #f8f8f8;
+            text-decoration: none;
+            font-size: 0.70rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: 10px;
+            z-index: 1;
+    
+        
+       
     }
 
 
@@ -239,17 +247,22 @@ footer {
     }
 
     /* Information about me */
-    #about {
+    .about {
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
-        margin-top: -30px;
-        margin-left: auto;
-        margin-right: auto;
-       /* height: 400px;**/
-
-
+       
+        
+    }
+    .wrapper-about{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        height: 20vh;
+        
+    
     }
 
     .will1 {
@@ -261,35 +274,55 @@ footer {
 
     }
 
-    .textchange {
-        font-family: 'My Soul', cursive;
-        font-size: 0.8rem;
-    }
-
     .presentation {
-        font-weight: bold;
-        font-size: 1rem;
-        margin-bottom: -40px;
-        
-    }
-.brand-info {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 0px;
-        margin-left: auto;
-        margin-right: auto;
         align-items: center;
-        width: 350px;
-        height: 100px;
-        padding: 15px;
-
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+    
+    .wrapper-presentation{
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
+        align-items:start;
+        color: rgb(0, 4, 7);
+        padding: 5px;
+        z-index: 3;
+        border-bottom: 1px solid rgb(182, 52, 30);
+        border-right: 1px solid rgb(182, 52, 30);
+        -moz-box-shadow: 0px 10px 0px 0px rgba(242, 226, 226, 0.75);
+        box-shadow: 0px 10px 0px 0px rgba(182, 52, 30, 0.75);
+        border-bottom-right-radius: 15px;
+        margin-top: 3rem;
+        height: 20vh;
+        width: 70vw;
+        
+    
     }
 
-    .brand-list a {
-        font-size: 40px;
-        padding: 20px;
-      
+     
+
+    .brand-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2rem;
+         /*background-color: rgba(7, 7, 7, 0.5);*/
+        
+    }
+    
+    .brand-list {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around ;
+        align-items: start;
+        font-size: 60px;
+        height: 10vh;
+        width: 70vw;
     }
 
    

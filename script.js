@@ -8,7 +8,7 @@ window.onload = function () {
         if (i < text.length) {
             document.getElementById("typing").innerHTML += text.charAt(i);
             i++;
-            setTimeout(type, 50);
+            setTimeout(type, 40);
         }
     }
     setTimeout(type, 2000);
