@@ -20,7 +20,7 @@ main{
 .nav {
     height: 50px;
     width: 100%;
-    position: relative;
+    position: fixed;
     background: rgba(0, 0, 0, 0.863);
     box-shadow: 0 8px 32px 0 rgba(29, 30, 41, 0.37);
     backdrop-filter: blur(4px);
@@ -256,7 +256,7 @@ footer {
         background-color: #333;
         height: 0px;
         transition: all 0.3s ease-in;
-        overflow-y: hidden;
+        overflow-y:scroll;
         top: 50px;
         left: 0px;
     }
@@ -282,6 +282,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        margin-top: 5rem;
         z-index: 1;
         
     }
