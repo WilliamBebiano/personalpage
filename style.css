@@ -30,24 +30,24 @@ main{
     text-align: right;
 }
 
-.nav>.nav-header {
+.nav .nav-header {
     display: inline;
 }
 
-.nav>.nav-header>.nav-title {
+.nav .nav-header .nav-title {
     display: inline-block;
     font-size: 22px;
     color: #fff;
     padding: 10px 10px 10px 10px;
 }
 
-.nav>.nav-links {
+.nav .nav-links {
     display: inline;
     float: right;
     font-size: 18px;
 }
 
-.nav>.nav-links>a {
+.nav .nav-links a {
     display: inline-block;
     padding: 13px 10px 13px 10px;
     color: #f8f8f8;
@@ -57,13 +57,13 @@ main{
     cursor: pointer;
 }
 
-.nav>.nav-links>a:hover {
+.nav .nav-links a:hover {
     background-color: rgba(0, 0, 0, 0.3);
     color: #45a049;
 }
 
-.nav>.nav-btn,
-.nav>#nav-check {
+.nav .nav-btn,
+.nav #nav-check {
     display: none;
 }
 
@@ -197,7 +197,7 @@ footer {
 
 
 
-@media only screen and (max-width: 680px) {
+@media (max-width: 680px), screen and (orientation: portrait) {
     body {
         display: block;
 
@@ -219,35 +219,37 @@ footer {
   
 
     /* mudar a posicao do navbar*/
-    .nav>.nav-btn {
+    .nav .nav-btn {
         display: inline-block;
         position: absolute;
         right: 0px;
         top: 0px;
         cursor: pointer;
+        z-index: 999;
     }
 
-    .nav>.nav-btn>label {
+    .nav .nav-btn>label {
         display: inline-block;
         width: 50px;
         height: 50px;
         padding: 13px;
     }
 
-    .nav>.nav-btn>label:hover,
+    .nav .nav-btn>label:hover,
     .nav #nav-check:checked~.nav-btn>label {
       /*  background-color: rgba(0, 0, 0, 0.3);*/
       cursor: pointer;
+      
     }
 
-    .nav>.nav-btn>label>span {
+    .nav .nav-btn label span {
         display: block;
         width: 25px;
         height: 10px;
         border-top: 2px solid #eee;
     }
 
-    .nav>.nav-links {
+    .nav .nav-links {
         position: absolute;
         display: block;
         width: 100%;
@@ -259,17 +261,17 @@ footer {
         left: 0px;
     }
 
-    .nav>.nav-links>a {
+    .nav .nav-links a {
         display: block;
         width: 90vw;
         
     }
 
-    .nav>#nav-check:not(:checked)~.nav-links {
+    .nav #nav-check:not(:checked)~.nav-links {
         height: 0px;
     }
 
-    .nav>#nav-check:checked~.nav-links {
+    .nav #nav-check:checked~.nav-links {
         height: 50vh;
         overflow-y: auto;
     }
@@ -280,7 +282,7 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-       
+        z-index: 1;
         
     }
     .wrapper-about{
@@ -299,6 +301,7 @@ footer {
         z-index: 2;
         margin: 0;
         margin-bottom: -20px;
+       
 
     }
 
@@ -324,7 +327,7 @@ footer {
         -moz-box-shadow: 0px 10px 0px 0px rgba(242, 226, 226, 0.75);
         box-shadow: 0px 10px 0px 0px rgba(182, 52, 30, 0.75);
         border-bottom-right-radius: 15px;
-        margin-top: 4rem;
+        margin-top: 5rem;
         height: 20vh;
         width: 70vw;
         
